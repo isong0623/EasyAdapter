@@ -1,0 +1,94 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    compileOnly 'androidx.appcompat:appcompat:1.1.0'
+    compileOnly 'androidx.recyclerview:recyclerview:1.1.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+
+
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+signing {
+    sign configurations.archives
+}
+
+group = "com.github.isong0623"
+archivesBaseName = "EasyAdapter"
+version = "1.0-androidx"
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment {
+                MavenDeployment deployment -> signing.signPom(deployment)
+            }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'EasyAdapter'
+                packaging 'aar'
+                description 'This is a view that is similar to the CardView of google ，but it can change the position of shadow and the shadow color of it . '
+                url 'https://github.com/isong0623/EasyAdapter-master'
+
+                scm {
+                    connection 'scm:git:https://github.com/isong0623/EasyAdapter-master.git'
+                    developerConnection 'scm:git:https://github.com/isong0623/EasyAdapter-master.git'
+                    url 'https://github.com/isong0623/EasyAdapter-master.git'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'com.github.isong0623'
+                        name 'isong0623'
+                        email '1099496903@qq.com'
+                    }
+                }
+            }
+        }
+    }
+}
