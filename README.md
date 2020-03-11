@@ -29,7 +29,7 @@ dependencies {
 }
 ```
 ### 新建recy_item.xml布局文件
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200308164720933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Jlc3QzMzU=,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20200308164720933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Jlc3QzMzU=,size_16,color_FFFFFF,t_70)
 ### 加载这个控件布局到RecyclerView 
 ```java
  		RecyclerView recy = findViewById(R.id.recy);
@@ -56,6 +56,6 @@ dependencies {
         recy.setAdapter(new EasyAdapter(this, R.layout.recy_item,lstDatas,iEasyAdapter,false));
 ```
 ## 加载效果
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200308165808342.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Jlc3QzMzU=,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20200308165808342.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Jlc3QzMzU=,size_16,color_FFFFFF,t_70)
 # EasyViewHolder 的更多用法
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200308165144481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Jlc3QzMzU=,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20200308165144481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Jlc3QzMzU=,size_16,color_FFFFFF,t_70)
