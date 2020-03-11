@@ -1,7 +1,7 @@
 # EasyAdapter
 还在为RecyclerView适配而烦恼吗？
 赶快使用EasyAdapter吧！
-
+https://blog.csdn.net/best335/article/details/104735231
 # 使用步骤
 ### 首先新建一个Android Studio项目
 修改app的build.gradle文件
@@ -32,7 +32,7 @@ dependencies {
 ![](https://img-blog.csdnimg.cn/20200308164720933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Jlc3QzMzU=,size_16,color_FFFFFF,t_70)
 ### 加载这个控件布局到RecyclerView 
 ```java
- 		RecyclerView recy = findViewById(R.id.recy);
+ 	RecyclerView recy = findViewById(R.id.recy);
         List<String> lstDatas = new ArrayList<>(Arrays.asList(new String[]{"1","2","3","4","5","6","7","8","9"}));
         EasyAdapter.IEasyAdapter iEasyAdapter = new EasyAdapter.IEasyAdapter<String>() {//这个接口对象会在RecyclerView初始化item时调用convert方法
             @Override
